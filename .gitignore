@@ -1,0 +1,47 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.venv/
+venv/
+env/
+build/
+dist/
+*.egg-info/
+
+# Tests and runtime output
+.test-output/
+.pytest_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+*.log
+*.tmp
+*.temp
+*.bak
+*~
+*_backup*
+
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+.forest-gis/
+
+# IDE and OS files
+.vscode/
+.idea/
+*.code-workspace
+Thumbs.db
+.DS_Store
+
+# ArcGIS lock files; keep source and small example GIS data visible
+*.lock
+*.sr.lock
+*.aprx.lock
+
+# Release archives are attached to GitHub Releases
+*.zip

@@ -1,0 +1,121 @@
+{
+  "schema_version": "1.0",
+  "registry_version": "1.4.0",
+  "tools": [
+    {
+      "id": "doctor",
+      "display_name": "GIS环境检查",
+      "runtime": "plain-python",
+      "risk_level": "low",
+      "mutates_data": false,
+      "idempotent": true,
+      "description": "检查普通Python、ArcGIS Pro及关键依赖是否可用。",
+      "inputs": {},
+      "outputs": {"environment_report": "json"}
+    },
+    {
+      "id": "inspect",
+      "display_name": "输入数据识别",
+      "runtime": "plain-python",
+      "risk_level": "low",
+      "mutates_data": false,
+      "idempotent": true,
+      "description": "识别影像、DEM、边界、已有小班和轨迹，并提取结构信息。",
+      "inputs": {"input_root": "directory"},
+      "outputs": {"input_manifest": "json"}
+    },
+    {
+      "id": "segment",
+      "display_name": "候选小班生成",
+      "runtime": "plain-python",
+      "risk_level": "medium",
+      "mutates_data": true,
+      "mutates_original_inputs": false,
+      "idempotent": false,
+      "description": "根据影像、边界和可选DEM生成候选小班，只作为人工核查起点。",
+      "inputs": {"config": "json"},
+      "outputs": {"candidate_compartments": "gpkg+shapefile", "report": "json"}
+    },
+    {
+      "id": "build-data",
+      "display_name": "ArcGIS项目数据构建",
+      "runtime": "arcgis-propy",
+      "risk_level": "medium",
+      "mutates_data": true,
+      "mutates_original_inputs": false,
+      "idempotent": false,
+      "description": "构建ProjectData.gdb、裁剪影像、地形统计和外业编辑图层。",
+      "inputs": {"config": "json"},
+      "outputs": {"project_data": "file-geodatabase"}
+    },
+    {
+      "id": "validate-gdb",
+      "display_name": "最终GDB深度检查",
+      "runtime": "arcgis-propy",
+      "risk_level": "low",
+      "mutates_data": false,
+      "idempotent": true,
+      "description": "检查字段、数量、几何、重叠、覆盖、坐标系和地形回写。",
+      "inputs": {"project": "directory"},
+      "outputs": {"quality_report": "json"}
+    },
+    {
+      "id": "validate-project",
+      "display_name": "成果结构检查",
+      "runtime": "plain-python",
+      "risk_level": "low",
+      "mutates_data": false,
+      "idempotent": true,
+      "description": "检查目录、文件和构建完成标记。",
+      "inputs": {"project": "directory"},
+      "outputs": {"quality_report": "json"}
+    },
+    {
+      "id": "validate-topology",
+      "display_name": "候选小班拓扑检查",
+      "runtime": "plain-python",
+      "risk_level": "low",
+      "mutates_data": false,
+      "idempotent": true,
+      "description": "检查候选小班重叠、几何有效性和连通关系。",
+      "inputs": {"gpkg": "file"},
+      "outputs": {"topology_report": "json"}
+    },
+    {
+      "id": "field-kit",
+      "display_name": "外业表单模板生成",
+      "runtime": "plain-python",
+      "risk_level": "low",
+      "mutates_data": true,
+      "mutates_original_inputs": false,
+      "idempotent": true,
+      "description": "生成小班核查、照片点、边界调整和样地调查CSV模板与字段规则。",
+      "inputs": {"output_root": "directory"},
+      "outputs": {"field_kit": "directory"}
+    },
+    {
+      "id": "provenance",
+      "display_name": "可复现性记录",
+      "runtime": "plain-python",
+      "risk_level": "low",
+      "mutates_data": true,
+      "mutates_original_inputs": false,
+      "idempotent": true,
+      "description": "记录输入指纹、环境、配置、步骤结果和产物清单。",
+      "inputs": {"workflow_root": "directory"},
+      "outputs": {"provenance": "json"}
+    },
+    {
+      "id": "package",
+      "display_name": "成果交付打包",
+      "runtime": "plain-python",
+      "risk_level": "low",
+      "mutates_data": true,
+      "mutates_original_inputs": false,
+      "idempotent": true,
+      "description": "打包项目数据、报告、说明、外业模板和校验清单。",
+      "inputs": {"project": "directory", "output": "zip"},
+      "outputs": {"delivery_package": "zip"}
+    }
+  ]
+}

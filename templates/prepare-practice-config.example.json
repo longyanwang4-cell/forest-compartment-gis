@@ -1,0 +1,51 @@
+{
+  "schema_version": "1.1",
+  "input_root": "D:/To_Stu",
+  "output_root": "D:/Forest_Practice_Project",
+  "input": {
+    "imagery": null,
+    "boundary": null,
+    "dem": null,
+    "compartments": null
+  },
+  "expected_compartment_count": 20,
+  "working_crs": "EPSG:32652",
+  "terrain": {
+    "dem_z_unit": "METER",
+    "z_factor": 1.0,
+    "dem_cell_size": null
+  },
+  "segmentation": {
+    "superpixels": 650,
+    "compactness": 8.0,
+    "max_pixels": 50000000
+  },
+  "naming": {
+    "prefix": "XB",
+    "start": 1
+  },
+  "package": {
+    "enabled": true,
+    "zip_output": null
+  },
+  "validation": {
+    "overlap_tolerance_m2": 1.0,
+    "gap_tolerance_m2": 5.0,
+    "outside_tolerance_m2": 1.0,
+    "min_coverage_ratio": 0.999,
+    "require_projected_crs": true,
+    "require_meter_unit": true
+  },
+  "execution_mode": "standard",
+  "human_oversight": {
+    "review_candidate_before_build": false
+  },
+  "reporting": {
+    "html_summary": true,
+    "field_kit": true
+  },
+  "provenance": {
+    "hash_mode": "sampled"
+  },
+  "step_timeout_seconds": 7200
+}

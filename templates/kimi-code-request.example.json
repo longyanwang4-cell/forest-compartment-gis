@@ -1,0 +1,8 @@
+{
+  "arguments": {
+    "action": "inspect",
+    "inputRoot": "D:/ForestData",
+    "outputRoot": "D:/ForestData_check"
+  },
+  "request_id": "kimi-demo-001"
+}

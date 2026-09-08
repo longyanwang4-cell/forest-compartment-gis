@@ -1,0 +1,1 @@
+{"scenarios":[{"id":"doctor","request":{"command":"doctor"},"expected_ok":true,"expected_command":"doctor"},{"id":"missing-input","request":{"command":"inspect"},"expected_ok":false},{"id":"unknown-command","request":{"command":"erase"},"expected_ok":false}]}

@@ -1,0 +1,1 @@
+ArcGIS 10.8使用Python 2.7。现代分割算法应在普通Python 3环境执行，再输出Shapefile/FileGDB供ArcMap加载、编辑和制图。不要把现代依赖安装到ArcMap Python。

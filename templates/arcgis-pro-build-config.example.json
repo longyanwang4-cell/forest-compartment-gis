@@ -1,0 +1,11 @@
+{
+  "input": {
+    "imagery": "D:/To_Stu/Beihua11.tif",
+    "boundary": "D:/To_Stu/Bound.shp",
+    "dem": "D:/To_Stu/ASTER/DEM.tif"
+  },
+  "preliminary_compartments": "D:/ForestGIS_Segment20/shapefile/xiaoban_preliminary.shp",
+  "output_dir": "D:/ForestGIS_Project_Data",
+  "working_crs": "auto_utm",
+  "allow_existing_output": false
+}

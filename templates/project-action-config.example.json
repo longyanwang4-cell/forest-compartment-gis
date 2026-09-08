@@ -1,0 +1,15 @@
+{
+  "data_root": "D:/ForestGIS_Project_Data",
+  "project": {
+    "mode": "new",
+    "project_folder": "D:/ArcGISProjects",
+    "project_name": "森林小班区划项目",
+    "template_aprx": "D:/Templates/BlankMap.aprx",
+    "map_name": "小班区划工作图",
+    "map_type": "MAP",
+    "preserve_template_items": false,
+    "open_after_build": false
+  },
+  "_status": "EXPERIMENTAL_DISABLED_DO_NOT_RUN",
+  "_manual_guide": "docs/ArcGISPro_手动创建小班项目.md"
+}

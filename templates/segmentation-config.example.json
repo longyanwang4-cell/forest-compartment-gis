@@ -1,0 +1,19 @@
+{
+  "input": {
+    "imagery": "D:/To_Stu/Beihua11.tif",
+    "boundary": "D:/To_Stu/Bound.shp",
+    "dem": "D:/To_Stu/ASTER/DEM.tif"
+  },
+  "output_dir": "D:/ForestGIS_Segment20",
+  "working_crs": "auto_utm",
+  "segmentation": {
+    "candidate_compartments": 20,
+    "superpixels": 650,
+    "compactness": 8.0,
+    "max_pixels": 50000000
+  },
+  "naming": {
+    "prefix": "XB",
+    "start": 1
+  }
+}

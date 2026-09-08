@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0",
+  "command": "segment",
+  "input_root": "D:/ForestData",
+  "output_root": "D:/ForestData/ForestGIS_Segment20",
+  "imagery": "D:/ForestData/Beihua11.tif",
+  "dem": "D:/ForestData/DEM.tif",
+  "boundary": "D:/ForestData/Bound.shp",
+  "compartments": null,
+  "backend": "common-python",
+  "python_environment": {
+    "plain_python": null,
+    "propy_bat": null
+  },
+  "safety": {
+    "protect_original_inputs": true,
+    "allow_existing_output": false
+  },
+  "reports": {
+    "output_root": "D:/ForestData/ForestGIS_Segment20/reports"
+  },
+  "payload": {
+    "input": {
+      "imagery": "D:/ForestData/Beihua11.tif",
+      "boundary": "D:/ForestData/Bound.shp",
+      "dem": "D:/ForestData/DEM.tif"
+    },
+    "output_dir": "D:/ForestData/ForestGIS_Segment20",
+    "working_crs": "auto_utm",
+    "segmentation": {
+      "candidate_compartments": 20,
+      "superpixels": 650,
+      "compactness": 8.0,
+      "max_pixels": 50000000
+    }
+  }
+}

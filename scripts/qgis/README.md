@@ -1,0 +1,1 @@
+QGIS后端建议使用GeoPackage和QGIS Processing。当前WorkBuddy v1.0主要完成ArcGIS Pro 3.5主流程；QGIS电脑可直接加载分割输出的forest_compartments.gpkg和imagery_clip.tif。
