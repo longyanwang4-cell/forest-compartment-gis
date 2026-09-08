@@ -201,7 +201,9 @@ def main():
     a = ap.parse_args()
 
     report = validate_topology(a.gpkg, a.layer)
-    text = json.dumps(report, ensure_ascii=False, indent=2)
+    # Windows ArcGIS/GBK consoles cannot encode symbols such as m²; escaped
+    # JSON keeps the report content identical while making stdout portable.
+    text = json.dumps(report, ensure_ascii=True, indent=2)
     print(text)
     if a.report:
         Path(a.report).write_text(text, encoding="utf-8")

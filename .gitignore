@@ -1,5 +1,6 @@
 # Python
 __pycache__/
+*.pyt.xml
 *.py[cod]
 *.pyo
 *.pyd

@@ -11,6 +11,7 @@ AI-assisted GIS and Codex Skill for forest compartment delineation, geometry ins
 ## 功能 / Features
 
 - 检查影像、边界、DEM、已有小班和轨迹输入
+- 数据格式、投影信息和 ArcGIS Pro 项目目录要求见：[数据准备说明](docs/DATA_REQUIREMENTS.md)。
 - 生成标注为“待人工核查”的候选小班
 - 检查字段、坐标系、覆盖、几何和拓扑
 - 生成外业表单和可复现性记录
@@ -59,7 +60,7 @@ powershell -NoProfile -File .\install.ps1
 
 ## Validation Status
 
-已完成 Skill 格式检查、控制层回归、契约测试、PowerShell 语法检查、隔离安装和发布包校验。真实 ArcGIS Pro 工具箱加载、ArcPy readiness 和真实 GIS 数据端到端流程尚未完成验收；本机最近一次 ArcPy 导入检查未通过。详见 [AUDIT.md](AUDIT.md) 与 [OPEN_SOURCE_AUDIT.md](OPEN_SOURCE_AUDIT.md)。
+已验证 ArcGIS Pro 3.5.3、ArcPy、Python Toolbox GUI 加载、4 个工具参数界面和 00 一键初始化真实运行；`D:\ForestGIS_Project\ProjectData.gdb` 已通过 `validate_project`。完整真实影像自动化 E2E 记录和完整 Run A / Run B 逐文件重复性报告仍待补充，属于已知限制。详见 [AUDIT.md](AUDIT.md)。
 
 ## Safety / Data Handling
 
