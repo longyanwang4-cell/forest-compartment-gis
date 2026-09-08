@@ -17,7 +17,7 @@ def main() -> int:
     for p in root.rglob("*"):
         if not p.is_file() or p.is_symlink() or p.resolve() == out: continue
         rel = p.relative_to(root)
-        if p.name in EXCLUDE_NAMES or any(x in EXCLUDE_DIRS for x in rel.parts): continue
+        if p.name in EXCLUDE_NAMES or p.name.endswith('.pyt.xml') or any(x in EXCLUDE_DIRS for x in rel.parts): continue
         if rel.name == "PACKAGE_SHA256SUMS.txt" or rel.name == ".release-package.json": continue
         files.append((rel.as_posix(), p))
     files.sort()
